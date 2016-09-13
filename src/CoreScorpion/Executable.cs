@@ -8,5 +8,7 @@ namespace CoreScorpion
 {
     class Executable
     {
+        private string fileName;
+        private byte[]
     }
 }

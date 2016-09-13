@@ -28,9 +28,12 @@ namespace CoreScorpion
         */
         public static Log Logger;
 
+        public static Executable Exe;
+
         public static void Init()
         {
             Logger = new Log();
+            Exe = new Executable();
         }
     }
 }

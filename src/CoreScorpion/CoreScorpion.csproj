@@ -88,6 +88,7 @@
   <ItemGroup>
     <Compile Include="Application.cs" />
     <Compile Include="ConsoleHelper.cs" />
+    <Compile Include="Executable.cs" />
     <Compile Include="Globals.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="Start.cs" />
