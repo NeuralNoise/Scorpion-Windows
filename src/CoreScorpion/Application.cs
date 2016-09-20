@@ -10,6 +10,7 @@ namespace CoreScorpion
     {
         public static class Constants
         {
+            public static int MachineVersion = 1;
             public static int BuildVersion = 0100;
             public static string Version = "0.1.0.0";
             public static string Name = "scorpion";

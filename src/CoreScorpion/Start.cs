@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,8 +26,8 @@ namespace CoreScorpion
         static void Main(string[] args)
         {
             string[] pOptions = null;
-
-            if(args.Length == 0)
+            
+            if (args.Length == 0)
             {
                 ConsoleHelper.Error("no input files!\nTry '{0}  -help' for more information.", 
                     Application.Constants.Name);
@@ -36,7 +37,7 @@ namespace CoreScorpion
             if(pOptions == null)
             {
                 ConsoleHelper.Error("executable file not provided, see " + 
-                    Application.Constants.Name + " - help for more details.");
+                    Application.Constants.Name + " -help for more details.");
             }
 
             if(!Application.Ready())
@@ -46,6 +47,15 @@ namespace CoreScorpion
             }
 
             Globals.Init();
+            if (ExeLoader.Load(pOptions))
+            {
+                if (!ScorpionVM.Startup(pOptions))
+                {
+                    ConsoleHelper.Error("exe \"" + Globals.Exe.header.name + "\" failed to start.");
+                }
+            }
+            
+            ConsoleHelper.Error("executable file: \"" + pOptions[0] + "\" could not be loaded.");
         }
     }
 }

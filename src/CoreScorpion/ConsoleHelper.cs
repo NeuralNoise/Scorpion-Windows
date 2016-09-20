@@ -16,7 +16,7 @@ namespace CoreScorpion
             string message = string.Format(format, args);
             Console.Out.Write(string.Format(
                 "{0}: {1}\n", Application.Constants.Name, message));
-            Exit(1);
+            Exit(EXIT_FAILURE);
         }
 
         public static void Exit(int val)
@@ -24,7 +24,7 @@ namespace CoreScorpion
             if(Application.Constants.Wait)
             {
                 Console.Out.Write("press any key to continue:");
-                Console.ReadKey();
+                Console.Read();
             }
 
             System.Environment.Exit(val);
@@ -83,31 +83,31 @@ namespace CoreScorpion
                     }
                     else if (args[i] == "-log=off")
                     {
-                        Globals.Logger.Level = Log.OFF;
+                        Globals.Logger.level = Log.OFF;
                     }
                     else if (args[i] == "-log=verbose")
                     {
-                        Globals.Logger.Level = Log.VERBOSE;
+                        Globals.Logger.level = Log.VERBOSE;
                     }
                     else if (args[i] == "-log=debug")
                     {
-                        Globals.Logger.Level = Log.DEBUG;
+                        Globals.Logger.level = Log.DEBUG;
                     }
                     else if (args[i] == "-log=info")
                     {
-                        Globals.Logger.Level = Log.INFO;
+                        Globals.Logger.level = Log.INFO;
                     }
                     else if (args[i] == "-log=warn")
                     {
-                        Globals.Logger.Level = Log.WARN;
+                        Globals.Logger.level = Log.WARN;
                     }
                     else if (args[i] == "-log=error")
                     {
-                        Globals.Logger.Level = Log.ERROR;
+                        Globals.Logger.level = Log.ERROR;
                     }
                     else if (args[i] == "-log=assert")
                     {
-                        Globals.Logger.Level = Log.ASSERT;
+                        Globals.Logger.level = Log.ASSERT;
                     }
                     else
                     {
